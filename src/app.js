@@ -2,7 +2,7 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
 
-var menu = new UI.Menu({
+var dayPickerWindow = new UI.Menu({
     sections: [{
       items: [{
         title: 'Vrijdag 3 juli',
@@ -15,14 +15,14 @@ var menu = new UI.Menu({
       }]
     }]
   });
-  menu.on('select', function(e) {
-    openDay(e.item.day_id);
+  dayPickerWindow.on('select', function(e) {
+    openDayWindow(e.item.day_id);
   });
-  menu.show();
+  dayPickerWindow.show();
 
 var friday = [];
 var saturday = [];
-function openDay(day_id){
+function openDayWindow(day_id){
 
   var data = [];
   if(day_id===0){
